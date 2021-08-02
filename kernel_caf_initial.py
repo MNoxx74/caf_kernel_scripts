@@ -4,8 +4,7 @@ def mergeCAF(x,path):
     os.system("git fetch "+x)
     os.system("git merge -s ours --no-commit --allow-unrelated-histories FETCH_HEAD")
     os.system("git read-tree --prefix="+path+" -u FETCH_HEAD")
-    mas = path+": Initial merge from "+tag
-    os.system("git commit -s -m '"+mas+"'")
+    os.system("git commit -s")
 
 tag = input("Enter tag: ")
 audio = "https://source.codeaurora.org/quic/la/platform/vendor/opensource/audio-kernel "+tag
